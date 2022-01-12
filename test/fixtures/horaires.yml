@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horcours: MyString
+  horjour: MyString
+  horsalle: MyString
+  horheure: MyString
+  sessionencour: one
+  jour: one
+  cour: one
+  heure: one
+  salle: one
+
+two:
+  horcours: MyString
+  horjour: MyString
+  horsalle: MyString
+  horheure: MyString
+  sessionencour: two
+  jour: two
+  cour: two
+  heure: two
+  salle: two

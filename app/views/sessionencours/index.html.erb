@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Les Sessions</h1> 
+<table class="table table-success table-hover table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date Début</th>
+      <th>Date Fin</th>
+      <th>Etat Session</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sessionencours.each do |sessionencour| %>
+      <tr>
+        <td><%= sessionencour.id %></td>
+        <td><%= sessionencour.datedebut.strftime("%A, %B %-d, %Y") %></td>
+        <td><%= sessionencour.datefin.strftime("%A, %B %-d, %Y") %></td>
+        <td><%= format_name(sessionencour.etatsession) %></td>
+        <td><%= link_to 'Show', sessionencour %></td>
+        <td><%= link_to 'Edit', edit_sessionencour_path(sessionencour) %></td>
+        <td><%= link_to 'Destroy', sessionencour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sessionencour', new_sessionencour_path %>

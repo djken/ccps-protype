@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Horaires</h1>
+
+  <%#= sessionencour.etatsession %>
+
+<%# if onOffSess == true %>
+<%# <%= :sessionencour_id, Sessionencours.all.collect { |u| [u.etatsession, u.id] } %>
+
+<%# if @horaires.sessionencour.etatsession %>
+<table class="table table-success table-hover table-striped">
+  <thead>
+    <tr>
+     <!-- <th>Sessionencour</th> -->
+      <th>Jour</th>
+      <th>Cour</th>
+      <th>Heure</th>
+      <th>Salle</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @horaires.each do |horaire| %>
+    <% if format_name(horaire.sessionencour.etatsession ) == "Ouverte" %>
+      <tr>
+        <!--td><%#= format_name(horaire.sessionencour.etatsession) %></td>-->
+        <td><%= link_to horaire.cour.nomcours, horaire %></td>
+        <td><%= horaire.jour.nomjour %> </td>
+        <td><%= horaire.heure.heurecours %></td>
+        <td><%= horaire.salle.nomsalle %></td>
+      </tr>
+    <% end %>
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to 'Création d\'un Nouveau Horaire', new_horaire_path, :class => "btn btn-success btn-sm" %>
+
+<%# else %>
+  <!--<div class="alert alert-primary alert-dismissible fade show">
+    <strong>Désolé!</strong> Il faut ouvrir ou créér une Séssion
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div> -->
+<%# end %>

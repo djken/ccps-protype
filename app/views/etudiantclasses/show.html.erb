@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nometud:</strong>
+  <%= @etudiantclass.nomEtud %>
+</p>
+
+<p>
+  <strong>Prenometud:</strong>
+  <%= @etudiantclass.prenomEtud %>
+</p>
+
+<p>
+  <strong>Naissanceetud:</strong>
+  <%= @etudiantclass.naissanceEtud %>
+</p>
+
+<p>
+  <strong>Phoneetud:</strong>
+  <%= @etudiantclass.phoneEtud %>
+</p>
+
+<p>
+  <strong>Emailetud:</strong>
+  <%= @etudiantclass.emailEtud %>
+</p>
+
+<p>
+  <strong>Addresseetud:</strong>
+  <%= @etudiantclass.addresseEtud %>
+</p>
+
+<p>
+  <strong>Villeetud:</strong>
+  <%= @etudiantclass.villeEtud %>
+</p>
+
+<%= link_to 'Edit', edit_etudiantclass_path(@etudiantclass) %> |
+<%= link_to 'Back', etudiantclasses_path %> |
+<%= link_to 'Destroy', @etudiantclass, method: :delete, data: { confirm: 'Are you sure?' } %>
+

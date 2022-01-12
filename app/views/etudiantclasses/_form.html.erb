@@ -1,0 +1,65 @@
+<%= bootstrap_form_for(etudiantclass) do |form| %>
+  <% if etudiantclass.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(etudiantclass.errors.count, "error") %> prohibited this etudiantclass from being saved:</h2>
+
+      <ul>
+        <% etudiantclass.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row"> 
+ <div class="col-6">
+    <%#= form.label :nomEtud %>
+    <%= form.text_field :nomEtud, label: "Nom" %>
+  </div>
+
+  <div class="col-6">
+    <%#= form.label :emailEtud %>
+    <%= form.text_field :emailEtud, label: "Email" %>
+  </div>
+
+ <div class="col-6">
+    <%#= form.label :prenomEtud %>
+    <%= form.text_field :prenomEtud, label: "Prénom" %>
+  </div>
+
+  <div class="col-6">
+    <%#= form.label :phoneEtud %>
+    <%= form.text_field :phoneEtud, label: "Phone"%>
+  </div>
+
+  <div class="col-6">
+    <%#= form.label :naissanceEtud %>
+    <%= form.date_select :naissanceEtud, label: "Date Naissance" %>
+  </div>
+
+  <div class="col-6">
+    <%#= form.label :villeEtud %>
+    <%= form.text_field :villeEtud, label: "Ville" %>
+  </div>
+  
+    <div class="col-6">
+    <%#= form.label :addresseEtud %>
+      <%= form.text_field :addresseEtud, label: "Addresse" %>
+    </div>
+    
+     <div class="col-6">
+        <%= form.select :horaire_ids, Horaire.all.collect {|t| [t.cour.nomcours + " | " + t.jour.nomjour + " | " + t.heure.heurecours + " | " + t.salle.nomsalle, t.id]}, { :prompt => "Please select"}, { :multiple => true, :size => 5 } %>
+    </div>
+
+  <div class="col-6">
+        <%#= form.collection_check_boxes (:horaire_ids, Horaire.all, :id) do |h| %>
+            <%#= h.id %>
+        <%# end %>
+    </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</div>
+ 
+<% end %>

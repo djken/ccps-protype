@@ -1,0 +1,53 @@
+<%= bootstrap_form_for(horaire) do |form| %>
+  <% if horaire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(horaire.errors.count, "error") %> prohibited this horaire from being saved:</h2>
+
+      <ul>
+        <% horaire.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<!-- Hide ID Session -->
+  <div class="field col">
+    <%# <select name="cour[sessionencour_id]" id="cour_sessionencour_id"><option value="1">1</option></select> %>
+    <% Sessionencour.all.collect do |u|  %>
+      <input name="horaire[sessionencour_id]" id="horaire_sessionencour_id" value="<%= u.id %>" type = "hidden">
+    <% end %>
+  </div>
+
+<div class="row">
+
+  <div class="field col">
+    <%#= form.label :jour, class: "label" %>
+    
+    <%= form.select :jour_id, Jour.all.collect { |u| [u.nomjour, u.id] },{}, { :multiple => false, :size => 6 } %>
+    
+  </div>
+
+  <div class="field col">
+    <%#= form.label :cour, class: "label" %>    
+    <%= form.select :cour_id, Cour.all.collect { |u| [u.nomcours, u.id] }, {}, { :multiple => false, :size => 6 } %>
+  </div>
+  
+  <div class="field col">
+    <%#= form.label :salle, class: "label" %>    
+    <%= form.select :salle_id, Salle.all.collect { |u| [u.nomsalle, u.id] }, {}, { :multiple => false, :size => 6 } %>
+  </div>
+
+  <div class="field col">
+    <%#= form.label :heure, class: "label" %>    
+    <%= form.select :heure_id, Heure.all.collect { |u| [u.heurecours, u.id] }, {}, { :multiple => false, :size => 6 } %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+</div>

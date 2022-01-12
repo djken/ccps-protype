@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<div class="p-5 mb-4 bg-light border rounded-3">
+    <h2>Anglais</h2>
+    <p class="lead"> <%= @horaire.cour.nomcours %> | <%= @horaire.jour.nomjour %> | <%= @horaire.heure.heurecours %> | <%= @horaire.salle.nomsalle %> </p>
+    <%= link_to 'Back', horaires_path,  :class => "btn btn-primary btn-sm" %>
+    <%= link_to 'Edit', edit_horaire_path(@horaire), :class => "btn btn-info btn-sm" %> 
+    <%= link_to 'Destroy', @horaire, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
+
+</div>

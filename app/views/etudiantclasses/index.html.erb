@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Liste Des Étudiants</h1>
+
+<table class="table table-success table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Prénom et Nom</th>
+      <th>Naissance</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Addresse</th>
+      <th>Ville</th>
+      <th>Horaire</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @etudiantclasses.each do |etudiantclass| %>
+      <tr>
+        <td><%= link_to etudiantclass.prenomEtud + " " + etudiantclass.nomEtud, etudiantclass %></td>
+        <td><%= etudiantclass.naissanceEtud.strftime("%-d %B %Y") %></td>
+        <td><%= etudiantclass.phoneEtud %></td>
+        <td><%= etudiantclass.emailEtud %></td>
+        <td><%= etudiantclass.addresseEtud %></td>
+        <td><%= etudiantclass.villeEtud %></td>
+        <td><% etudiantclass.horaires.each do |e| %>
+                  <%= e.cour.nomcours %>
+            <% end %>
+        </td>
+        <%#= link_to 'Destroy', etudiantclass, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Etudiantclass', new_etudiantclass_path %>

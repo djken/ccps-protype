@@ -1,0 +1,37 @@
+<%= bootstrap_form_for(sessionencour) do |form| %>
+  <% if sessionencour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sessionencour.errors.count, "error") %> prohibited this sessionencour from being saved:</h2>
+
+      <ul>
+        <% sessionencour.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row p-5 mb-4 bg-light border rounded-3">
+  
+  <div class="col-4 offset-md-1">
+    <%#= form.label :datedebut %>
+    <%= form.date_select :datedebut, :label => "Date Début"  %>
+  </div>
+
+  <div class="col-4 offset-md-1">
+    <%#= form.label :datefin %>
+    <%= form.date_select :datefin, :label => "Date Fin"  %>
+  </div>
+
+  <div class="col-4 offset-md-4 mt-3 bg-white border rounded-3">
+    <%#= form.label :etatsession, :class => "form-check-label" %>
+    <%= form.check_box :etatsession, :label => "Statut de la Session" %>
+  </div>
+</div>
+
+  <br>
+  <div class="actions">
+    <%= form.submit :label => "Sauvegarde Modification" %>
+  </div>
+
+<% end %>
