@@ -1,0 +1,53 @@
+<%= bootstrap_form_for(classegroup) do |form| %>
+  <% if classegroup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(classegroup.errors.count, "error") %> prohibited this classegroup from being saved:</h2>
+
+      <ul>
+        <% classegroup.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="field col-lg-3">
+    <%#= form.label :prenom %>
+    <%= form.text_field :prenom %>
+  </div>
+
+  <div class="field col-lg-3">
+    <%#= form.label :nom %>
+    <%= form.text_field :nom %>
+  </div>
+
+  <div class="field col">
+    <%#= form.label :devoirs %>
+    <%= form.number_field :devoirs %>
+  </div>
+
+  <div class="field col">
+    <%#= form.label :intra %>
+    <%= form.text_field :intra %>
+  </div>
+
+  <div class="field col">
+    <%#= form.label :final %>
+    <%= form.text_field :final %>
+  </div>
+
+  <div class="field col">
+    <%#= form.label :total %>
+    <%= form.text_field :total %>
+  </div>
+
+  <div class="field col-3">
+    <%#= form.label :remarques %>
+    <%= form.text_area :remarques %>
+  </div>
+</div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

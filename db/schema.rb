@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_180915) do
+ActiveRecord::Schema.define(version: 2022_01_13_184440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "classegroups", force: :cascade do |t|
+    t.string "prenom"
+    t.string "nom"
+    t.float "devoirs"
+    t.float "intra"
+    t.float "final"
+    t.float "total"
+    t.string "remarques"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "classes", force: :cascade do |t|
+    t.string "prenom"
+    t.string "nom"
+    t.float "devoirs"
+    t.float "intra"
+    t.float "final"
+    t.float "total"
+    t.string "remarques"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "cours", force: :cascade do |t|
     t.string "nomcours"

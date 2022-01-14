@@ -1,0 +1,29 @@
+    <div class="row pt-4">
+    <% @horaires.each do |h| %>
+    <% if format_name(h.sessionencour.etatsession ) == "Ouverte" %>
+    	<div class="col-lg-2">
+
+            <div class="card text-center">
+                <div class="card-header">
+                
+                </div>
+                <div class="card-body p-0">
+                    <h4><%= link_to h.cour.nomcours, h %></h4>
+                    <p class="card-text m-0"><%=  h.jour.nomjour %></p>
+                    <p class="card-text m-0"><%= h.heure.heurecours %></p>
+                    <p class="card-text m-0"><%=  h.salle.nomsalle %></p>
+                    <hr>
+                    <%#h.etudiantclasses.each do |he| %>
+                        <%#= he %>
+                    <%# end %>
+                    <%#= link_to h.jour.nomjour, :controller => :etudiantclasses, :action => :show, :id => h.etudiantclass_id %>
+                </div>
+                <div class="card-footer">
+                  
+                </div>
+            </div>
+
+        </div>
+        <% end %>
+        <% end %>
+    </div>

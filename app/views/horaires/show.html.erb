@@ -8,3 +8,7 @@
     <%= link_to 'Destroy', @horaire, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
 
 </div>
+
+<% @horaire.etudiantclass.each do |he| %>
+    <%= he.nomEtud %>
+<% end %>

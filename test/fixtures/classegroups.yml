@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prenom: MyString
+  nom: MyString
+  devoirs: 1.5
+  intra: 1.5
+  final: 1.5
+  total: 1.5
+  remarques: MyString
+
+two:
+  prenom: MyString
+  nom: MyString
+  devoirs: 1.5
+  intra: 1.5
+  final: 1.5
+  total: 1.5
+  remarques: MyString

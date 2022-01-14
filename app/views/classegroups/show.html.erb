@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Prenom:</strong>
+  <%= @classegroup.prenom %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @classegroup.nom %>
+</p>
+
+<p>
+  <strong>Devoirs:</strong>
+  <%= @classegroup.devoirs %>
+</p>
+
+<p>
+  <strong>Intra:</strong>
+  <%= @classegroup.intra %>
+</p>
+
+<p>
+  <strong>Final:</strong>
+  <%= @classegroup.final %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @classegroup.total %>
+</p>
+
+<p>
+  <strong>Remarques:</strong>
+  <%= @classegroup.remarques %>
+</p>
+
+<%= link_to 'Edit', edit_classegroup_path(@classegroup) %> |
+<%= link_to 'Back', classegroups_path %>

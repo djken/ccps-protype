@@ -45,6 +45,11 @@ class HorairesController < ApplicationController
     redirect_to horaires_url, notice: 'Horaire was successfully destroyed.'
   end
 
+  def groupeclasses 
+    @horaires = Horaire.all
+    # @studentclasses = Horaire.find_by(:id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_horaire
