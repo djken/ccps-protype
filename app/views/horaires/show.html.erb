@@ -1,14 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <div class="p-5 mb-4 bg-light border rounded-3">
-    <h2>Anglais</h2>
-    <p class="lead"> <%= @horaire.cour.nomcours %> | <%= @horaire.jour.nomjour %> | <%= @horaire.heure.heurecours %> | <%= @horaire.salle.nomsalle %> </p>
+    <h4 class="text-center">Calvary Christian Professional School</h4>
+    <div class="text-center"> <%= @horaire.cour.nomcours %></div>
+    <div class="text-center"> <%= @horaire.jour.nomjour %> - <%= @horaire.heure.heurecours %></div>
+    <div class="text-center"> <%= @horaire.salle.nomsalle %> </div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+        <!--<th scope="col">#</th>-->
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @horaire.etudiantclass.each do |he| %>
+            <tr>
+            <!--<th scope="row">2</th>-->
+                <td><%= he.prenomEtud %></td>
+                <td><%= he.nomEtud %></td>
+                <td><%= he.phoneEtud %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+</div>
+
     <%= link_to 'Back', horaires_path,  :class => "btn btn-primary btn-sm" %>
     <%= link_to 'Edit', edit_horaire_path(@horaire), :class => "btn btn-info btn-sm" %> 
     <%= link_to 'Destroy', @horaire, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
-
-</div>
-
-<% @horaire.etudiantclass.each do |he| %>
-    <%= he.nomEtud %>
-<% end %>
